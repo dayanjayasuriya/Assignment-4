@@ -19,6 +19,7 @@ public class BankAccount {
   */
   public BankAccount() {
   }
+
   public BankAccount(Customer newCustomer, double newBalance) {
     balance = newBalance;
     customer = newCustomer;
@@ -36,6 +37,15 @@ public class BankAccount {
   */
   public BankAccount(double newBalance) {
     balance = newBalance;
+  }
+
+  /**
+  * Adding copy constructor for BankAccount
+  */
+  public BankAccount(BankAccount oldBankAccount) {
+    customer = oldBankAccount.getCustomer();
+    balance = oldBankAccount.getBalance();
+    overdraftAmount = oldBankAccount.getOverdraftAmount();
   }
 
   /**
@@ -58,7 +68,7 @@ public class BankAccount {
   /**
   * Setter method for the overdraft limit for the account.
   */
-  public double setOverdraftAmount(double newOverdraftAmount) {
+  public void setOverdraftAmount(double newOverdraftAmount) {
     //This try block catches an Exception caused by the user not entering an integer.
     try {
       /*This if statement restricts the user to entering a positive number to avoid causing
@@ -76,7 +86,12 @@ public class BankAccount {
     catch (InputMismatchException e) {
       System.out.println("You did not enter a number to set the overdraft amount at.");
     }
+  }
 
+  /**
+  * getter method for overdraftAmount
+  */
+  public double getOverdraftAmount() {
     return overdraftAmount;
   }
 

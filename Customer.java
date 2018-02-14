@@ -46,13 +46,7 @@ public class Customer {
     customerID = oldCustomer.getID();
   }
 
-  /**
-  * Copy constructor for if same name and ID entered again
-  */
-  public Customer (name, customerID) {
-    name = getName();
-    customerID = getID();
-  }
+
 
   /**
   * Setter and Getter methods for name

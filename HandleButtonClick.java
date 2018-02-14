@@ -14,7 +14,7 @@ public class HandleButtonClick implements EventHandler<ActionEvent>
 	private Label alteredLabel;
 	private int mathSign;
 
-
+	//initiate by assigning values to the instance variables
 	public HandleButtonClick(Label labelToAlter, TextField newAmountEntered,
 														BankAccount existingBankAccount, int newMathSign) {
 		amountEntered = newAmountEntered;
@@ -22,6 +22,8 @@ public class HandleButtonClick implements EventHandler<ActionEvent>
 		alteredLabel = labelToAlter;
 		mathSign = newMathSign;
 	}
+
+	//handle the changes in the labeleling 
 	@Override
 	public void handle(ActionEvent event) {
 		//get value of deposit
